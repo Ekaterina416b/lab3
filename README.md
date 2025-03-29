@@ -41,7 +41,13 @@ EOF
 -- Configuring done (1.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/makbuk/lab03/formatter_lib/_build
+% cd _build 
+% make
+>>[ 50%] Building CXX object CMakeFiles/formatter.dir/formatter.cpp.o
+[100%] Linking CXX static library libformatter.a
+[100%] Built target formatter
 ```
+
 Содержимое CMakeLists.txt: 
 
 <img width="533" alt="Снимок экрана 2025-03-29 в 15 33 38" src="https://github.com/user-attachments/assets/d25157d1-bfee-471a-b156-88802231aeb6" />
@@ -87,15 +93,21 @@ EOF
 -- Configuring done (0.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/makbuk/lab03/formatter_ex_lib/_build
+% cd _build
+% make
+>>[ 25%] Building CXX object formatter/CMakeFiles/formatter.dir/formatter.cpp.o
+[ 50%] Linking CXX static library libformatter.a
+[ 50%] Built target formatter
+[ 75%] Building CXX object CMakeFiles/formatter_ex.dir/formatter_ex.cpp.o
+[100%] Linking CXX static library libformatter_ex.a
+[100%] Built target formatter_ex
 ```
 Содержимое CMakeLists.txt: 
 
 <img width="443" alt="Снимок экрана 2025-03-29 в 16 47 00" src="https://github.com/user-attachments/assets/b86a799d-c10d-4296-b433-fbd6ee496617" />
 
+3)Конечно же ваша компания предоставляет примеры использования своих библиотек. Чтобы продемонстрировать как работать с библиотекой formatter_ex, вам необходимо создать два CMakeList.txt для двух простых приложений:
 
-# Проверяем содержимое файла
-cat CMakeLists.txt
-
-# Запускаем сборку
-cmake -H. -B_build
+hello_world, которое использует библиотеку formatter_ex;
+solver, приложение которое испольует статические библиотеки formatter_ex и solver_lib.
 ```
